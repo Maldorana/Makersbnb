@@ -80,6 +80,10 @@ So I can keep requests open for my spaces
 I can receive booking requests for my spaces until I have confirmed one for each given night
 '''
 
+## Database Domain Modelling
+
+![Database domain Modelling](https://github.com/Maldorana/Makersbnb/blob/main/Database%20domain%20modeling.png)
+
 ## MakersBnB specification
 
 We would like a web application that allows users to list spaces they have available, and to hire spaces for the night.
