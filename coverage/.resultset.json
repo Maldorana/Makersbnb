@@ -1,0 +1,23 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/space_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/lib/space.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1632149824
+  }
+}
