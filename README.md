@@ -2,9 +2,8 @@
 
 ## User stories
 
-'''
------ MVP -----
-
+### MVP User stories
+```
 As a user
 So I can have my details saved
 I can sign up to Makersbnb
@@ -40,9 +39,11 @@ I can provide a price per night for my spaces
 As a user
 So I can see what spaces are available
 I can see a list of spaces with names, descriptions and prices
+```
 
------ EXTRA -----
+### Extra user stories
 
+```
 As a user
 So I can change the details of my spaces
 I can edit the details of my spaces
@@ -78,7 +79,7 @@ I can see when a space has been booked and is not available
 As a user
 So I can keep requests open for my spaces
 I can receive booking requests for my spaces until I have confirmed one for each given night
-'''
+```
 
 ## Database Domain Modelling
 
