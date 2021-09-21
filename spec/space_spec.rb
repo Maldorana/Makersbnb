@@ -3,9 +3,15 @@ require 'space'
 describe Space do
   describe '.list_all' do
     it 'returns all spaces' do
-      expect(Space.list_all).to include("Spacename1")
-      expect(Space.list_all).to include("Spacename2")
-      expect(Space.list_all).to include("Spacename3")
+      Space.add(name: "Spacename1", description: "Spacedescription1", price: "Spaceprice1")
+      Space.add(name: "Spacename2", description: "Spacedescription2", price: "Spaceprice2")
+      Space.add(name: "Spacename3", description: "Spacedescription3", price: "Spaceprice3")
+      
+      spaces = Space.list_all
+
+      expect(spaces).to include("Spacename1")
+      expect(spaces).to include("Spacename2")
+      expect(spaces).to include("Spacename3")
     end
   end
 
