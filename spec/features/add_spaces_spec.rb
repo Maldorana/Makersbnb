@@ -7,6 +7,6 @@ feature 'add a new space' do
     fill_in :price, with: 'Spaceprice4'
     click_button 'Add space'
 
-    expect(page).to have_content('Spacenam4')
+    expect(page).to have_content('Spacename4')
   end
 end

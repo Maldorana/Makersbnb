@@ -22,9 +22,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/index' do
+    Space.add(name: params[:name], description: params[:description], price: params[:price],)
     @spaces = Space.list_all
-    connection = PG.connect(dbname: "makersbnb")
-    connection.exec("INSERT INTO spaces (name, description, price) VALUES ('#{params[:name]}', '#{params[:description]}', '#{params[:price]}');")
     erb(:"spaces/index")
   end
 
