@@ -13,6 +13,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
+    p ENV
     erb(:index)
   end
 
@@ -21,10 +22,10 @@ class MakersBnB < Sinatra::Base
     erb(:"spaces/index")
   end
 
-  post '/spaces/index' do
+  post '/spaces' do
     Space.add(name: params[:name], description: params[:description], price: params[:price],)
     @spaces = Space.list_all
-    erb(:"spaces/index")
+    redirect '/spaces/index'
   end
 
   get '/spaces/new' do

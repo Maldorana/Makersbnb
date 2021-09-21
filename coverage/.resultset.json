@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/borisl/Desktop/PreCourse/Makersbnb/spec/features/add_spaces_spec.rb": {
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/add_spaces_spec.rb": {
         "lines": [
           1,
           1,
@@ -17,7 +17,7 @@
           null
         ]
       },
-      "/Users/borisl/Desktop/PreCourse/Makersbnb/spec/features/view_spaces_spec.rb": {
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/view_spaces_spec.rb": {
         "lines": [
           1,
           1,
@@ -30,11 +30,56 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/borisl/Desktop/PreCourse/Makersbnb/spec/space_spec.rb": {
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/space_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/database_helper.rb": {
         "lines": [
           1,
           null,
@@ -42,32 +87,15 @@
           1,
           1,
           1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
           null
         ]
       },
-      "/Users/borisl/Desktop/PreCourse/Makersbnb/spec/user_spec.rb": {
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/user_spec.rb": {
         "lines": [
 
         ]
       }
     },
-    "timestamp": 1632230866
+    "timestamp": 1632238770
   }
 }

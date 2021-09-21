@@ -7,7 +7,13 @@ feature 'view spaces' do
     visit('/spaces/index')
     
     expect(page).to have_content('Spacename1')
+    expect(page).to have_content('Spacedescription1')
+    expect(page).to have_content('Spaceprice1')
     expect(page).to have_content('Spacename2')
+    expect(page).to have_content('Spacedescription2')
+    expect(page).to have_content('Spaceprice2')
     expect(page).to have_content('Spacename3')
+    expect(page).to have_content('Spacedescription3')
+    expect(page).to have_content('Spaceprice3')
   end
 end
