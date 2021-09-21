@@ -7,5 +7,13 @@ describe DatabaseConnection do
 
       DatabaseConnection.setup('users')
     end
+
+    it 'this connection is persistent' do 
+      connection = DatabaseConnection.setup('users')
+      expect(DatabaseConnection.connection).to eq connection
+    end 
+  
+  
   end 
 end 
+
