@@ -1,7 +1,9 @@
-require '.lib/database_connection'
+require './lib/database_connection'
 
 if ENV['ENVIRONMENT'] == 'test' 
-  DatabaseConnection.setup('users_test')
+  DatabaseConnection.setup('makersbnb_test')
 else 
-  DatabaseConnection.setup('users')
+  DatabaseConnection.setup('makersbnb')  
 end 
+
+#makersbnb_test
