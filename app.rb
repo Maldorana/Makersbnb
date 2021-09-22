@@ -9,7 +9,7 @@ class MakersBnB < Sinatra::Base
   set :public, 'public'
   enable :sessions
 
-  configure :development do
+  configure :development do 
     register Sinatra::Reloader
   end
 
