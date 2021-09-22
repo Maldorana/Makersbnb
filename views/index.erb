@@ -1,0 +1,9 @@
+<% if @user %>
+  <h1>Welcome, <%= @user.username %></h1>
+<% end %>
+
+<% if @user %>
+<form action="/sessions/destroy" method="post">
+  <input type="submit" value="Sign out" />
+</form>
+<% end %>
