@@ -1,6 +1,22 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/bookingdate_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/lib/bookingdate.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/add_spaces_spec.rb": {
         "lines": [
           1,
@@ -12,6 +28,51 @@
           1,
           1,
           null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/deleting_space_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/input_date_for_space_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           null,
           null
@@ -56,23 +117,47 @@
           null,
           1,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
           1,
           1,
           1,
-          1,
+          null,
           1,
           null,
           1,
           1,
           1,
           1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
           1,
           null,
           null,
@@ -96,6 +181,6 @@
         ]
       }
     },
-    "timestamp": 1632238770
+    "timestamp": 1632312696
   }
 }
