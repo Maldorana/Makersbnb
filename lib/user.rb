@@ -46,4 +46,16 @@ class User
   #   )
   #   User.new(result[0]['id'], result[0]['email'], result[0]['username'])
   end
+
+  def self.authenticate(email:, password:)
+    if ENV['ENVIRONMENT'] == "test"
+      connection = PG.connect(dbname: 'makersbnb_test')
+    else
+      connection = PG.connect(dbname: 'makersbnb')
+    end
+    result = connection.exec("SELECT * FROM users WHERE email = $1", [email])
+    return unless result.any?
+    return unless BCrypt::Password.new(result[0]['password']) == password
+    user = User.new(id: result[0]['id'], email: result[0]['email'])
+  end
 end
