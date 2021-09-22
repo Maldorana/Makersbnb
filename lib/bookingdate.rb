@@ -1,0 +1,3 @@
+class BookingDate
+
+end

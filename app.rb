@@ -3,11 +3,13 @@ require 'sinatra/reloader'
 require './database_connection_setup'
 require './lib/user'
 require 'sinatra/flash'
+require 'pg'
+require './lib/space.rb'
 
 class MakersBnB < Sinatra::Base
 
   set :public, 'public'
-  enable :sessions
+  enable :sessions, :method_override
 
   configure :development do
     register Sinatra::Reloader
@@ -35,41 +37,51 @@ class MakersBnB < Sinatra::Base
     erb :"sessions/new"
   end 
 
-
-# post '/sessions' do
-#   result = DatabaseConnection.query(
-#     "SELECT * FROM users WHERE email = $1",
-#     [params[:email]]
-#   )
-#   user = User.new(result[0]['id'], result[0]['email'], result[0]['password'])
-
-#   session[:user_id] = user.id
-#   # redirect('/bookmarks')
-# end
-
-post '/sessions' do
-  user = User.authenticate(email: params[:email], username: params[:username], password: params[:password])
-  if user
-    session[:user_id] = user.id
-    redirect('/')
-  else
-    flash[:notice] = 'Please check your email or password.'
-    redirect('/sessions/new')
+  post '/sessions' do
+    user = User.authenticate(email: params[:email], username: params[:username], password: params[:password])
+    if user
+      session[:user_id] = user.id
+      redirect('/')
+    else
+      flash[:notice] = 'Please check your email or password.'
+      redirect('/sessions/new')
+    end
   end
-end
 
-post '/sessions/destroy' do
-  session.clear 
-  #flash[:notice] = 'You have signed out.'
-  redirect('/loggedout')
-end 
+  post '/sessions/destroy' do
+    session.clear 
+    #flash[:notice] = 'You have signed out.'
+    redirect('/loggedout')
+  end 
 
-get '/loggedout' do 
-  flash[:notice] = 'You have signed out.'
-end 
+  get '/loggedout' do 
+    flash[:notice] = 'You have signed out.'
+  end 
 
+  get '/spaces/index' do
+    @spaces = Space.list_all
+    erb(:"spaces/index")
+  end
 
+  post '/spaces' do
+    Space.add(name: params[:name], description: params[:description], price: params[:price])
+    @spaces = Space.list_all
+    redirect '/spaces/index'
+  end
 
+  get '/spaces/new' do
+    erb(:"spaces/new")
+  end
+
+  get '/spaces/:id/show' do
+    @space = Space.find(id: params[:id])
+    erb(:"spaces/show")
+  end
+
+  delete '/spaces/:id' do
+    Space.delete(id: params[:id])
+    redirect '/spaces/index'
+  end
 
   run! if app_file == $0
 end

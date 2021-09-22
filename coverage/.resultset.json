@@ -2,6 +2,107 @@
   "RSpec": {
     "coverage": {
       "/Users/harryparsons/Desktop/PROJECTS/Makersbnb/spec/database_connection_spec.rb": {
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/bookingdate_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/lib/bookingdate.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/add_spaces_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/deleting_space_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/input_date_for_space_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/view_spaces_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/space_spec.rb": {
         "lines": [
           null,
           null,
@@ -38,6 +139,7 @@
           1,
           1,
           1,
+
           1,
           null,
           null,
@@ -55,6 +157,7 @@
           1,
           1,
           null,
+
           null,
           null,
           null
@@ -63,6 +166,59 @@
       "/Users/harryparsons/Desktop/PROJECTS/Makersbnb/spec/database_helper.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           null,
           1,
           1,
@@ -72,6 +228,7 @@
         ]
       },
       "/Users/harryparsons/Desktop/PROJECTS/Makersbnb/spec/features/registration_spec.rb": {
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/database_helper.rb": {
         "lines": [
           1,
           1,
@@ -146,10 +303,20 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
           null
+        ]
+      },
+      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/user_spec.rb": {
+        "lines": [
+
         ]
       }
     },
     "timestamp": 1632311003
+    "timestamp": 1632312696
   }
 }
