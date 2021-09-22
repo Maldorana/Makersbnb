@@ -19,7 +19,6 @@ class MakersBnB < Sinatra::Base
 
   get '/' do
     @user = User.find(session[:user_id])
-   # @spaces = Spaces.all
     erb(:index)
   end
 
@@ -41,6 +40,7 @@ class MakersBnB < Sinatra::Base
     user = User.authenticate(email: params[:email], username: params[:username], password: params[:password])
     if user
       session[:user_id] = user.id
+      flash[:notice] = "You've logged in."
       redirect('/')
     else
       flash[:notice] = 'Please check your email or password.'
@@ -50,7 +50,7 @@ class MakersBnB < Sinatra::Base
 
   post '/sessions/destroy' do
     session.clear 
-    #flash[:notice] = 'You have signed out.'
+    flash[:notice] = 'You have signed out.'
     redirect('/loggedout')
   end 
 
@@ -64,7 +64,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.add(name: params[:name], description: params[:description], price: params[:price])
+    Space.add(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
     @spaces = Space.list_all
     redirect '/spaces/index'
   end
@@ -80,6 +80,13 @@ class MakersBnB < Sinatra::Base
 
   delete '/spaces/:id' do
     Space.delete(id: params[:id])
+    redirect '/spaces/index'
+  end
+
+  post '/spaces/:id/booking' do
+    #Request.add(space_id:, user_id:, date:)
+    connection = PG.connect(dbname: 'makersbnb')
+    connection.exec("INSERT INTO requests_test (space_id, user_id, date) VALUES(#{params[:id]}, #{3}, #{'2021-09-30'}) RETURNING id, space_id, user_id, date;")
     redirect '/spaces/index'
   end
 

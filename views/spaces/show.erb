@@ -5,7 +5,7 @@
 
 <h2>Book this space</h2>
 
-<form action="/spaces/booking" method='post'>
-  <input type="date" name="day">
+<form action="/spaces/<%= @space.id %>/booking" method='post'>
+  <input type="date" name="Date">
   <input type="submit" value="Request booking">
 </form>
