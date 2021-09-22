@@ -10,6 +10,7 @@ gem 'webrick'
 #gem 'thin'
 gem 'pg'
 gem 'bcrypt'
+gem 'sinatra-flash'
 
 group :test do
   gem 'capybara'
