@@ -32,4 +32,28 @@ describe Space do
       expect(space.id).to eq(persisted_data['id'])
     end
   end
+
+  describe '.find' do
+    it 'returns the requested space' do
+      space = Space.add(name: "Spacename100", description: "Spacedescription100", price: "Spaceprice100")
+
+      result = Space.find(id: space.id)
+
+      expect(result).to be_a(Space)
+      expect(result.name).to eq("Spacename100")
+      expect(result.description).to eq("Spacedescription100")
+      expect(result.price).to eq("Spaceprice100")
+      expect(result.id).to eq(space.id)
+    end
+  end
+
+  describe '.delete' do
+    it 'delete the requested space' do
+      space = Space.add(name: "Spacename100", description: "Spacedescription100", price: "Spaceprice100")
+
+      Space.delete(id: space.id)
+
+      expect(Space.list_all.size).to eq(0)
+    end
+  end
 end

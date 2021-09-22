@@ -1,0 +1,13 @@
+<h1>Show</h1>
+<p><%= @space.name %></p>
+<p><%= @space.description %></p>
+<p><%= @space.price %></p>
+
+<h2>Book this space</h2>
+
+<form action="/spaces/booking" method='post'>
+  <input type="text" name="day" placeholder="Day">
+  <input type="text" name="month" placeholder="Month">
+  <input type="text" name="year" placeholder="Year">
+  <input type="submit" value="Request booking">
+</form>
