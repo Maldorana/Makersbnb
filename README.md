@@ -84,6 +84,7 @@ I can receive booking requests for my spaces until I have confirmed one for each
 ## Database Domain Modelling
 
 ![Database domain Modelling](https://github.com/Maldorana/Makersbnb/blob/main/Database%20domain%20modeling.png)
+![Database domain Modelling2](https://github.com/Maldorana/Makersbnb/blob/main/Database%20domain%20modeling2.png)
 
 ## Wireframes
 
