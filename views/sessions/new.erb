@@ -1,17 +1,15 @@
-
-<form action="/sessions" method="post">
-  <label for="email">
-    email
-    <input type="email" name="email" />
-  </label>
-  <label for="username">
-    username
-    <input type="username" name="username" />
-  </label>
-  <label for="password">
-    password
-    <input type="password" name="password" />
-  </label>
-  <input type="submit" value="Sign in" />
-</form>
-
+<div class="form-mini-container">
+  <h1>Log in</h1>
+  <form class="form-mini" action="/sessions" method="post">
+    <div class="form-row">
+      <input type="email" name="email" placeholder="Enter your email">
+    </div>
+    <div class="form-row">
+      <input type="password" name="password" placeholder="Enter your password">
+    </div>
+    <div class="form-row form-last-row">
+      <input type="submit" value='Log in'>
+    </div>
+  </form>
+  <a class="floating-link" href="/users/new">Don't have an account? Sign up</a>
+</div>

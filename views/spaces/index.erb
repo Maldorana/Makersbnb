@@ -1,11 +1,13 @@
-<ul>
-  <% @spaces.each do |space| %>
-    <li class="space" id="space-<%= space.id %>"><a href="/spaces/<%= space.id %>/show"><%= space.name %></a></li>
-    <p><%= space.description %></p>
-    <p><%= space.price %></p>
-    <form action="/spaces/<%= space.id %>" method="post">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete">
-    </form>
-  <% end %>
-</ul>
+<div class="row1-container">
+  <ul>
+    <% @spaces.each do |space| %>
+      <a href="/spaces/<%= space.id %>/show">
+        <div class="box red space" id="space-<%= space.id %>">
+          <h3><%= space.name %></h3>
+          <h4><%= space.price %></h4>
+          <p><%= space.description %></p>
+        </div>
+      </a>
+    <% end %>
+  </ul>
+</div>
