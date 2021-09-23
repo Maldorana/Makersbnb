@@ -19,11 +19,11 @@ class MakersBnB < Sinatra::Base
 
   get '/' do
     @user = User.find(session[:user_id])
-   # @spaces = Spaces.all
     erb(:index)
   end
 
   get '/users/new' do 
+    @user = User.find(session[:user_id])
     erb :"users/new"
   end 
 
@@ -34,6 +34,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/sessions/new' do
+    @user = User.find(session[:user_id])
     erb :"sessions/new"
   end 
 
@@ -41,6 +42,7 @@ class MakersBnB < Sinatra::Base
     user = User.authenticate(email: params[:email], username: params[:username], password: params[:password])
     if user
       session[:user_id] = user.id
+      flash[:notice] = "You've logged in."
       redirect('/')
     else
       flash[:notice] = 'Please check your email or password.'
@@ -50,36 +52,44 @@ class MakersBnB < Sinatra::Base
 
   post '/sessions/destroy' do
     session.clear 
-    #flash[:notice] = 'You have signed out.'
-    redirect('/loggedout')
+    flash[:notice] = 'You have signed out.'
+    redirect('/')
   end 
 
-  get '/loggedout' do 
+  get '/loggedout' do
     flash[:notice] = 'You have signed out.'
   end 
 
   get '/spaces/index' do
+    @user = User.find(session[:user_id])
     @spaces = Space.list_all
     erb(:"spaces/index")
   end
 
   post '/spaces' do
-    Space.add(name: params[:name], description: params[:description], price: params[:price])
+    Space.add(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
     @spaces = Space.list_all
     redirect '/spaces/index'
   end
 
   get '/spaces/new' do
+    @user = User.find(session[:user_id])
     erb(:"spaces/new")
   end
 
   get '/spaces/:id/show' do
+    @user = User.find(session[:user_id])
     @space = Space.find(id: params[:id])
     erb(:"spaces/show")
   end
 
   delete '/spaces/:id' do
     Space.delete(id: params[:id])
+    redirect '/spaces/index'
+  end
+
+  post '/spaces/:id/booking' do
+    Request.add(space_id: params[:id], user_id: session[:user_id], date: params[:date].gsub('-', ''))
     redirect '/spaces/index'
   end
 

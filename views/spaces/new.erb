@@ -1,6 +1,17 @@
-<form action="/spaces" method='post'>
-  <input type="text" name="name" placeholder="Name">
-  <input type="text" name="description" placeholder="Description">
-  <input type="text" name="price" placeholder="Price per night">
-  <input type="submit" value="Add space">
-</form>
+<div class="form-normal-container">
+  <h1>Add space</h1>
+  <form class="form-normal" action="/spaces" method='post'>
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Name">
+    </div>
+    <div class="form-row">
+      <input class="text-box" type="text" name="description" placeholder="Description">
+    </div>
+    <div class="form-row">
+      <input type="text" name="price" placeholder="Price">
+    </div>
+    <div class="form-row form-last-row">
+      <input type="submit" value='Add space'>
+    </div>
+  </form>
+</div>

@@ -1,9 +1,13 @@
 <% if @user %>
   <h1>Welcome, <%= @user.username %></h1>
+
+  <form action="/sessions/destroy" method="post">
+    <input type="submit" value="Sign out" />
+  </form>
 <% end %>
 
-<% if @user %>
-<form action="/sessions/destroy" method="post">
-  <input type="submit" value="Sign out" />
-</form>
-<% end %>
+<section class="content">
+  <h1>Too lazy to code this</h1>
+  <p class="sub-title"><strong>Why is css such a pain</strong> <br /> This will have to do for now</p>
+  <p><a class="button" id="load-more-content" href="#top">Ghost button for style</a></p>
+</section>
