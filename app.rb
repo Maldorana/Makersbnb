@@ -8,7 +8,6 @@ require './lib/user'
 require './lib/request'
 require './lib/bookingdate'
 
-
 class MakersBnB < Sinatra::Base
 
   set :public, 'public'
@@ -96,6 +95,11 @@ class MakersBnB < Sinatra::Base
     Request.add(space_id: params[:id], user_id: session[:user_id], date_start: params[:date_start].gsub('-', ''), date_end: params[:date_end].gsub('-', ''))
     redirect '/spaces/index'
   end
+
+  get '/users/requests' do
+    @requests = Request.list_all
+    erb(:"users/requests")
+    end
 
   run! if app_file == $0
 end

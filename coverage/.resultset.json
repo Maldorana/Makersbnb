@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Maldorana/Desktop/Makers/Course/Week 5/makersbnb/spec/features/add_request_for_space_spec.rb": {
+      "/Users/borisl/Desktop/PreCourse/Makers/Makersbnb/spec/features/view_request_spec.rb": {
         "lines": [
           1,
           1,
@@ -16,6 +16,7 @@
           0,
           0,
           0,
+
           null,
           null
         ]

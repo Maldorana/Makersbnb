@@ -1,0 +1,13 @@
+
+<ul>
+    <% @requests.each do |x| %>
+     
+    <li><%= Space.find(id: x.space_id).name %></li>
+    <li><%= Space.find(id: x.space_id).price %></li>
+    <li><%= Space.find(id: x.space_id).description %></li>
+    <li><%= User.find(id: x.user_id).username %></li>
+    <li><%= User.find(id: x.user_id).email %></li>
+    
+   
+    <% end %>
+    </ul>

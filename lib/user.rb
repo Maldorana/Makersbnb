@@ -24,7 +24,7 @@ class User
     User.new(id: result[0]['id'], email: result[0]['email'], username: result[0]['username'])
   end
 
-  def self.find(id)
+  def self.find(id:)
     return nil unless id
     if ENV['ENVIRONMENT'] == "test"
       connection = PG.connect(dbname: 'makersbnb_test')
