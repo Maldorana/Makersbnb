@@ -1,11 +1,12 @@
-<h1>Show</h1>
-<p><%= @space.name %></p>
+<h1><%= @space.name %></h1>
+<h3>£ <%= @space.price %> per night</h3>
 <p><%= @space.description %></p>
-<p><%= @space.price %></p>
+<h4>Available from: <%= @space.date_start %> to <%= @space.date_end %></h4>
 
-<h2>Book this space</h2>
+<h3 class="margins">Book this space</h3>
 
 <form action="/spaces/<%= @space.id %>/booking" method='post'>
-  <input type="date" name="date">
+  <input type="date" name="date_start">
+  <input type="date" name="date_end">
   <input type="submit" value="Request booking">
 </form>
