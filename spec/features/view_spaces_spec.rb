@@ -1,8 +1,8 @@
 feature 'view spaces' do
   scenario 'user lands on page and see the spaces' do
-    Space.add(name: "Spacename1", description: "Spacedescription1", price: "Spaceprice1")
-    Space.add(name: "Spacename2", description: "Spacedescription2", price: "Spaceprice2")
-    Space.add(name: "Spacename3", description: "Spacedescription3", price: "Spaceprice3")
+    Space.add(name: "Spacename1", description: "Spacedescription1", price: "Spaceprice1", date_start: "20210927", date_start: "202109230")
+    Space.add(name: "Spacename2", description: "Spacedescription2", price: "Spaceprice2", date_start: "20210927", date_start: "202109230")
+    Space.add(name: "Spacename3", description: "Spacedescription3", price: "Spaceprice3", date_start: "20210927", date_start: "202109230")
 
     visit('/spaces/index')
     

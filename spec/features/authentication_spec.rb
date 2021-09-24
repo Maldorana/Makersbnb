@@ -7,10 +7,9 @@ feature 'authentication' do
 
     visit '/sessions/new'
     fill_in(:email, with: 'test@test.com')
-    fill_in(:username, with: 'test12')
     fill_in(:password, with: 'test123')
-    click_button('Sign in')
-    expect(page).to have_content 'Welcome, test12'
+    click_button('Log in')
+    expect(page).to have_content 'Welcome'
   end 
 
   scenario 'a user can sign out' do 
@@ -18,14 +17,12 @@ feature 'authentication' do
 
     visit '/sessions/new'
     fill_in(:email, with: 'test@test.com')
-    fill_in(:username, with: 'test12')
     fill_in(:password, with: 'test123')
-    click_button('Sign in')
+    click_button('Log in')
 
     click_button('Sign out')
 
-    expect(page).not_to have_content 'Welcome, test12'
-    expect(page).to have_content 'You have signed out.'
+    expect(page).not_to have_content('CSS')
   end
 end 
 

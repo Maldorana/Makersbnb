@@ -1,10 +1,10 @@
-html, body, .container {
-  height: 100%;
-}
-
 * {
   margin: 0;
   padding: 0;
+}
+
+html, body, .container {
+  height: 100%;
 }
 
 a {
@@ -45,6 +45,13 @@ span {
 
 #container {
   padding-top: 6em;
+  width: 540px;
+  text-align: center;
+}
+
+.margins {
+  margin-bottom: 1em;
+  margin-top: 2em;
 }
 
 /* header */
@@ -177,44 +184,6 @@ span {
 
 /* Homepage */
 
-.navbar {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 40px;
-  z-index: 9999;
-  position: fixed;
-}
-
-  .inner {
-    position: relative;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-.navbar a {
-  display: inline-block;
-  border: 1px solid #fff;
-  font-size: 14px;
-  line-height: 24px;
-  border-radius: 3px;
-  padding: 2px 15px;
-  text-decoration: none;
-  margin-top: 5px;
-}
-
-.container {
-  display: table;
-  padding-top: 80px;
-  width: 100%;
-}
-
-.content {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-
-/* Special */
 .sub-title {
   margin: 50px auto;
   font-size: 18px;
@@ -222,11 +191,11 @@ span {
   text-transform: uppercase;
 }
 
-.button {
+#see-all-spaces {
   display: inline-block;
   padding: 6px 10px;
-  color: #cafaea;
-  border: 1px solid #cafaea;
+  color: #C30B03;
+  border: 1px solid #C30B03;
   border-radius: 3px;
   font-weight: 700;
   line-height: normal;
@@ -235,67 +204,20 @@ span {
   text-transform: uppercase;
 }
 
-#more-content {
-  display: none;
-}
-
 /* Media Queries */
+
 @media only screen and (max-width: 340px) {
   
-  .container {
-    position: relative;
-    display: block;
-    float: left;
-    vertical-align: baseline;
-    margin: 0 auto;
-    padding: 80px 0 0 0;
-  }
-  
-  #more-content {
-    float: left;
-    margin-right: 10px;
-    
-  }
-  
-  body h1 {
-    font-size: 18px;
-    line-height: 23px;
-  } 
-  
-  .content, blockquote {  
-    display: inline;
-    margin: 0 auto;
-    padding-top: 80px;
-    vertical-align: baseline;
-  }
-
-  blockquote {
-    width: 150px;
-    margin: 15px auto;
-    font-size: 16px;
-    line-height: 21px;
-    background-color: transparent;
-  }
-
-  blockquote cite {
-    font-size: 14px;
-    line-height: 19px;
-  }
-
   .sub-title {
     font-size: 14px;
     line-height: 21px;
   }
 
-  .button, p {
+  #see-all-spaces, p {
     max-width: 150px;
     margin: 0 auto;
     font-size: 15px;
     line-height: 20px;
-  }
-
-  html, body, .container {
-    height: auto;
   }
 }
 
@@ -509,12 +431,6 @@ span {
   background-color: #fff;
 }
 
-@media (max-width: 950px) and (min-width: 450px) {
-  .box {
-      height: 80px;
-  }
-}
-
 .red {
   border-top: 3px solid #C30B03;
 }
@@ -528,4 +444,27 @@ span {
   .box {
       width: 540px;
   }
+}
+
+input[type=submit] {
+  display: block;
+  border-radius: 2px;
+  background: linear-gradient(120DEG, #FD5C63, #C30B03);
+  color: #ffffff;
+  font-weight: bold;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+  width: 100%;
+  padding: 14px 22px;
+  border: 0;
+  cursor: pointer;
+}
+
+input[type=date] {
+  box-sizing: border-box;
+  width: 48%;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+  padding: 12px 18px;
+  border: 1px solid #dbdbdb;
+  background-color: #fff !important;
+  margin: 0 0 1em 0.5em;
 }

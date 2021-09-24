@@ -5,6 +5,8 @@ feature 'add a new space' do
     fill_in :name, with: 'Spacename4'
     fill_in :description, with: 'Spacedescription4'
     fill_in :price, with: 'Spaceprice4'
+    fill_in :price, with: 'date_start'
+    fill_in :price, with: 'date_end'
     click_button 'Add space'
 
     expect(page).to have_content('Spacename4')
