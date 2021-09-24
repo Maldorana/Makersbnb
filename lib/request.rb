@@ -1,14 +1,18 @@
-class Request
-  attr_reader :space_id, :user_id, :date
+require_relative 'bookingdate'
 
-  def initialize(space_id:, user_id:, date: )
+class Request
+  attr_reader :space_id, :user_id, :date_start, :date_end
+
+  def initialize(space_id:, user_id:, date_start:, date_end:)
     @space_id = space_id
     @user_id = user_id
-    @date = date
-   
+    @date_start = date_start
+    @date_end = date_end
   end
 
   def self.list_all
+    starting = BookingDate.new
+    ending = BookingDate.new
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'makersbnb_test')
     else
@@ -16,17 +20,19 @@ class Request
     end
     result = connection.exec("SELECT * FROM requests")
     result.map do |request|
-      Request.new(space_id: request['space_id'], user_id: request['user_id'], date: request['date'])
+      Request.new(space_id: request['space_id'], user_id: request['user_id'], date_start: starting.convert_to_date(space['date_start']), date_end: ending.convert_to_date(space['date_end']))
     end
   end
 
-  def self.add(space_id:, user_id:, date:)
+  def self.add(space_id:, user_id:, date_start:, date_end:)
+    starting = BookingDate.new
+    ending = BookingDate.new
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'makersbnb_test')
     else
       connection = PG.connect(dbname: 'makersbnb')
     end
-    result = connection.exec("INSERT INTO requests (space_id, user_id, date) VALUES(#{space_id}, #{user_id}, #{date}) RETURNING id, space_id, user_id, date;")
-    Request.new(space_id: result[0]['space_id'], user_id: result[0]['user_id'], date: result[0]['date'])
+    result = connection.exec("INSERT INTO requests (space_id, user_id, date_start, date_end) VALUES(#{space_id}, #{user_id}, #{date_start}, #{date_end}) RETURNING id, space_id, user_id, date_start, date_end;")
+    Request.new(space_id: result[0]['space_id'], user_id: result[0]['user_id'], date_start: starting.convert_to_date(result[0]['date_start']), date_end: ending.convert_to_date(result[0]['date_end']))
   end
 end

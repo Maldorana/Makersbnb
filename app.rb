@@ -1,11 +1,12 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './database_connection_setup'
-require './lib/user'
 require 'sinatra/flash'
+require './database_connection_setup'
 require 'pg'
-require './lib/space.rb'
-require './lib/request.rb'
+require './lib/space'
+require './lib/user'
+require './lib/request'
+require './lib/bookingdate'
 
 class MakersBnB < Sinatra::Base
 
@@ -68,7 +69,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.add(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
+    Space.add(name: params[:name], description: params[:description], price: params[:price], date_start: params[:date_start].gsub('-', ''), date_end: params[:date_end].gsub('-', ''), user_id: session[:user_id])
     @spaces = Space.list_all
     redirect '/spaces/index'
   end
@@ -81,6 +82,7 @@ class MakersBnB < Sinatra::Base
   get '/spaces/:id/show' do
     @user = User.find(session[:user_id])
     @space = Space.find(id: params[:id])
+    @host = User.find(@space.user_id)
     erb(:"spaces/show")
   end
 
@@ -90,7 +92,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/:id/booking' do
-    Request.add(space_id: params[:id], user_id: session[:user_id], date: params[:date].gsub('-', ''))
+    Request.add(space_id: params[:id], user_id: session[:user_id], date_start: params[:date_start].gsub('-', ''), date_end: params[:date_end].gsub('-', ''))
     redirect '/spaces/index'
   end
 

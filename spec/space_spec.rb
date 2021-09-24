@@ -4,9 +4,9 @@ require 'database_helper'
 describe Space do
   describe '.list_all' do
     it 'returns all spaces' do
-      space = Space.add(name: "Spacename1", description: "Spacedescription1", price: "Spaceprice1")
-      Space.add(name: "Spacename2", description: "Spacedescription2", price: "Spaceprice2")
-      Space.add(name: "Spacename3", description: "Spacedescription3", price: "Spaceprice3")
+      space = Space.add(name: "Spacename1", description: "Spacedescription1", price: "Spaceprice1", date_start: "20210927", date_start: "202109230")
+      Space.add(name: "Spacename2", description: "Spacedescription2", price: "Spaceprice2", date_start: "20210927", date_start: "202109230")
+      Space.add(name: "Spacename3", description: "Spacedescription3", price: "Spaceprice3", date_start: "20210927", date_start: "202109230")
       
       spaces = Space.list_all
 
@@ -21,7 +21,7 @@ describe Space do
 
   describe '.add' do
     it 'adds a new space' do
-      space = Space.add(name: "Spacename10", description: "Spacedescription10", price: "Spaceprice10")
+      space = Space.add(name: "Spacename10", description: "Spacedescription10", price: "Spaceprice10", date_start: "20210927", date_start: "202109230")
       connection = PG.connect(dbname: 'makersbnb_test')
       persisted_data = persisted_data(table: 'spaces', id: space.id)
 
