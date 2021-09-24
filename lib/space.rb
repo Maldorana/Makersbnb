@@ -1,15 +1,16 @@
 require_relative 'bookingdate'
 
 class Space
-  attr_reader :id, :name, :description, :price, :date_start, :date_end
+  attr_reader :id, :name, :description, :price, :date_start, :date_end, :user_id
 
-  def initialize(id:, name:, description:, price:, date_start:, date_end:)
+  def initialize(id:, name:, description:, price:, date_start:, date_end:, user_id: nil)
     @id = id
     @name = name
     @description = description
     @price = price
     @date_start = date_start
     @date_end = date_end
+    @user_id = user_id
   end
 
   def self.list_all
@@ -47,7 +48,7 @@ class Space
       connection = PG.connect(dbname: 'makersbnb')
     end
     result = connection.exec("SELECT * FROM spaces WHERE id = #{id}")
-    Space.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], date_start: starting.convert_to_date(result[0]['date_start']), date_end: ending.convert_to_date(result[0]['date_end']))
+    Space.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], date_start: starting.convert_to_date(result[0]['date_start']), date_end: ending.convert_to_date(result[0]['date_end']), user_id: result[0]['user_id'])
   end
 
   def self.delete(id:)

@@ -83,6 +83,7 @@ class MakersBnB < Sinatra::Base
   get '/spaces/:id/show' do
     @user = User.find(session[:user_id])
     @space = Space.find(id: params[:id])
+    @host = User.find(@space.user_id)
     erb(:"spaces/show")
   end
 
