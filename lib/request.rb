@@ -20,7 +20,7 @@ class Request
     end
     result = connection.exec("SELECT * FROM requests")
     result.map do |request|
-      Request.new(space_id: request['space_id'], user_id: request['user_id'], date_start: starting.convert_to_date(space['date_start']), date_end: ending.convert_to_date(space['date_end']))
+      Request.new(space_id: request['space_id'], user_id: request['user_id'], date_start: starting.convert_to_date(request['date_start']), date_end: ending.convert_to_date(request['date_end']))
     end
   end
 
