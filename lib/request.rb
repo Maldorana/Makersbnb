@@ -1,10 +1,11 @@
 class Request
   attr_reader :space_id, :user_id, :date
 
-  def initialize(space_id:, user_id:, date:)
+  def initialize(space_id:, user_id:, date: )
     @space_id = space_id
     @user_id = user_id
     @date = date
+   
   end
 
   def self.list_all

@@ -5,6 +5,7 @@ require './lib/user'
 require 'sinatra/flash'
 require 'pg'
 require './lib/space.rb'
+require './lib/request.rb'
 
 class MakersBnB < Sinatra::Base
 
@@ -92,6 +93,11 @@ class MakersBnB < Sinatra::Base
     Request.add(space_id: params[:id], user_id: session[:user_id], date: params[:date].gsub('-', ''))
     redirect '/spaces/index'
   end
+
+  get '/users/requests' do
+    @requests = Request.list_all
+    erb(:"users/requests")
+    end
 
   run! if app_file == $0
 end
